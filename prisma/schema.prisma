@@ -1,0 +1,51 @@
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Product {
+    id          String      @id @default(auto()) @map("_id") @db.ObjectId
+    description String
+    price       Float
+    width       Int
+    height      Int
+    length      Int
+    weight      Float
+    currency    String
+    OrderItems  OrderItem[]
+}
+
+model Coupon {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    code        String   @unique
+    percentage  Float
+    expire_date DateTime
+}
+
+model Order {
+    id                String      @id @default(auto()) @map("_id") @db.ObjectId
+    coupon_code       String
+    coupon_percentage Float
+    code              String
+    cpf               String
+    email             String
+    issue_date        DateTime
+    freight           Float
+    total             Float
+    sequence          Int
+    OrderItems        OrderItem[]
+}
+
+model OrderItem {
+    id         String  @id @default(auto()) @map("_id") @db.ObjectId
+    order      Order   @relation(fields: [id_order], references: [id])
+    id_order   String  @db.ObjectId
+    product    Product @relation(fields: [id_product], references: [id])
+    id_product String  @db.ObjectId
+    price      Float
+    quantity   Int
+}
