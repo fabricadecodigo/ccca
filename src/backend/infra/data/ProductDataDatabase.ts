@@ -14,7 +14,7 @@ export default class ProductDataDatabase implements ProductData {
 
 		if (!productData) throw new Error('Product not found');
 		return new Product(
-			productData.id,
+			productData.idProduct,
 			productData.description,
 			productData.price,
 			productData.width,

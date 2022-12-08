@@ -2,7 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, adjust your mongodb connection
+- Rename the file .env.example to .env
+- Put your connection string into the variable DATABASE_URL
+
+
+Second, run the development server:
 
 ```bash
 npm install
@@ -11,5 +16,7 @@ npm run prisma:push
 npm run prisma:seed
 npm run dev
 ```
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
