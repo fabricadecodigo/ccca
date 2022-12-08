@@ -2,9 +2,15 @@ import { PrismaClient, Prisma } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
+    await prisma.orderItem.deleteMany();
+    await prisma.product.deleteMany();
+    await prisma.coupon.deleteMany();
+    await prisma.order.deleteMany();
+    
 	await prisma.product.createMany({
 		data: [
 			{
+				idProduct: 1,
 				description: 'A',
 				price: 1000,
 				width: 100,
@@ -14,6 +20,7 @@ async function main() {
 				currency: 'BRL',
 			},
 			{
+				idProduct: 2,
 				description: 'B',
 				price: 5000,
 				width: 50,
@@ -23,6 +30,7 @@ async function main() {
 				currency: 'BRL',
 			},
 			{
+				idProduct: 3,
 				description: 'C',
 				price: 30,
 				width: 10,
@@ -32,6 +40,7 @@ async function main() {
 				currency: 'BRL',
 			},
 			{
+				idProduct: 4,
 				description: 'D',
 				price: 100,
 				width: 100,

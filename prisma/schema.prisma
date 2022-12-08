@@ -9,6 +9,7 @@ generator client {
 
 model Product {
     id          String      @id @default(auto()) @map("_id") @db.ObjectId
+    idProduct   Int         @unique
     description String
     price       Float
     width       Int
