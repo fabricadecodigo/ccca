@@ -57,7 +57,7 @@ async function main() {
 			{
 				code: 'VALE20',
 				percentage: 20,
-				expire_date: new Date('2022-12-10T10:00:00'),
+				expire_date: new Date('2023-01-10T10:00:00'),
 			},
 			{
 				code: 'VALE20_EXPIRED',
