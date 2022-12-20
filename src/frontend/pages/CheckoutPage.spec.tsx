@@ -1,10 +1,8 @@
 import '@testing-library/jest-dom';
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { CheckoutPage } from './CheckoutPage';
-import { unmountComponentAtNode } from 'react-dom';
-import { checkoutGateway } from '../container/container';
 import CheckoutGatewayHttp from '../infra/gateway/CheckoutGatewayHttp';
+import { CheckoutPage } from './CheckoutPage';
 
 afterEach(() => {
 	jest.clearAllMocks();
