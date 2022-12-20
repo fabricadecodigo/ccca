@@ -21,6 +21,5 @@ test.skip('Deve consultar um pedido', async function () {
 	await checkout.execute(input);
 	const getOrderByCpf = new GetOrderByCpf(orderData);
 	const output = await getOrderByCpf.execute('987.654.321-00');
-	console.log(output);
 	expect(output.total).toBe(6350);
 });
